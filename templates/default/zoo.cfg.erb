@@ -1,0 +1,19 @@
+#
+## This file is created by chef for <%= node['fqdn'] %>
+
+tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir=<%= @datadir %>
+clientPort=<%= @clientport %>
+<% if @clientport_address %>
+clientPortAddress=<%= @clientport_address %>
+<%end%>
+
+autopurge.snapRetainCount=<%= @ap_snapretaincount%>
+autopurge.purgeInterval=<%= @ap_purgeinterval %>
+
+## Cluster Servers
+<% @cluster_servers.each do |server| %>
+server.<%= server %>
+<%end%>
