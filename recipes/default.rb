@@ -45,3 +45,13 @@ template "#{node['zookeeper']['basepath']}/etc/zookeeper/zoo.cfg" do
   variables node['zookeeper']['config']
   notifies :restart, "service[zookeeper]"
 end
+
+## Must set myid to attribute around each nodes.
+unless node['zookeeper']['config'][''].empty?
+  raise "Must set attribute myid!!" if node['zookeeper']['config']['myid'] == 0
+  file "/var/db/zookeeper/myid" do
+    owner "zookeeper"
+    group "hadoop"
+    content node['zookeeper']['config']['myid']
+  end
+end
