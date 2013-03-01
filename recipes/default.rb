@@ -39,13 +39,6 @@ service "zookeeper" do
   restart_command "svcadm restart zookeeper"
 end
 
-
-template "#{node['zookeeper']['basepath']}/etc/zookeeper/zoo.cfg" do
-  source "zoo.cfg.erb"
-  variables node['zookeeper']['config']
-  notifies :restart, "service[zookeeper]"
-end
-
 ## Must set myid to attribute around each nodes.
 unless node['zookeeper']['config'][''].empty?
   raise "Must set attribute myid!!" if node['zookeeper']['config']['myid'] == 0
@@ -55,3 +48,10 @@ unless node['zookeeper']['config'][''].empty?
     content node['zookeeper']['config']['myid']
   end
 end
+
+template "#{node['zookeeper']['basepath']}/etc/zookeeper/zoo.cfg" do
+  source "zoo.cfg.erb"
+  variables node['zookeeper']['config']
+  notifies :restart, "service[zookeeper]"
+end
+

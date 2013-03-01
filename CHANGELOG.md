@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of zookeeper_smartos.
 
+## 0.2.1:
+
+* move create file resource before template.
+
 ## 0.2.0:
 
 * create myid file for cluster configration.
