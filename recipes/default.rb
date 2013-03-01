@@ -40,7 +40,7 @@ service "zookeeper" do
 end
 
 ## Must set myid to attribute around each nodes.
-unless node['zookeeper']['config'][''].empty?
+unless node['zookeeper']['config']['cluster_servers'].empty?
   raise "Must set attribute myid!!" if node['zookeeper']['config']['myid'] == 0
   file "/var/db/zookeeper/myid" do
     owner "zookeeper"
