@@ -31,7 +31,7 @@ end
 
 package "zookeeper-server" do
   action :install
-  version "3.4.3"
+  version node[:zookeeper][:pkg_version]
 end
 
 service "zookeeper" do

@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of zookeeper_smartos.
 
+## 0.2.3:
+
+* version set as attribute
+
 ## 0.2.21:
 
 * Bugfix: cluster_servers key empty..

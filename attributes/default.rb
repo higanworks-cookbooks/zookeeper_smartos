@@ -1,5 +1,6 @@
-node.default['zookeeper']['basepath'] = "/opt/local"
-node.default['zookeeper']['config'] = {
+default['zookeeper']['basepath'] = "/opt/local"
+default['zookeeper']['pkg_version'] = '3.4.3'
+default['zookeeper']['config'] = {
   :datadir => "/var/db/zookeeper",
   :clientport => 2181,
   :clientport_address => nil,
