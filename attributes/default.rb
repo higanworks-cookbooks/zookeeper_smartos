@@ -3,6 +3,7 @@ default['zookeeper']['pkg_version'] = '3.4.6'
 default['zookeeper']['config'] = {
   :datadir => "/var/db/zookeeper",
   :clientport => 2181,
+  :maxclient => 128,
   :clientport_address => nil,
   :ap_snapretaincount => 3,
   :ap_purgeinterval => 2,

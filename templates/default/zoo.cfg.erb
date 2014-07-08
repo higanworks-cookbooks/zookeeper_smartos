@@ -6,6 +6,7 @@ initLimit=10
 syncLimit=5
 dataDir=<%= @datadir %>
 clientPort=<%= @clientport %>
+maxClientCnxns=<%= @maxclient.to_s %>
 <% if @clientport_address %>
 clientPortAddress=<%= @clientport_address %>
 <%end%>

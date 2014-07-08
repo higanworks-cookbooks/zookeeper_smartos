@@ -2,6 +2,14 @@
 
 This file is used to list changes made in each version of zookeeper_smartos.
 
+## 0.2.5:
+
+* set maxClient
+
+## 0.2.4:
+
+* version update to 3.4.6
+
 ## 0.2.3:
 
 * version set as attribute
