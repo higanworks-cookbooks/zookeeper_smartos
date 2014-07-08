@@ -1,5 +1,5 @@
 default['zookeeper']['basepath'] = "/opt/local"
-default['zookeeper']['pkg_version'] = '3.4.3'
+default['zookeeper']['pkg_version'] = '3.4.6'
 default['zookeeper']['config'] = {
   :datadir => "/var/db/zookeeper",
   :clientport => 2181,
